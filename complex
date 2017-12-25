@@ -1,0 +1,54 @@
+package lab;
+import java.util.*;
+class com{
+	float r,im;
+	static Scanner s = new Scanner(System.in);
+	com(){
+		System.out.println("Enter the complex no.");
+		r=Float.parseFloat(s.nextLine());
+		im=Float.parseFloat(s.nextLine());
+	}
+	void add(com o1,com o2){
+		float rs = o1.r+o2.r;
+		float ims = o1.im+o2.im;
+		System.out.println("Sum is "+ rs +"+i"+ ims);
+	}
+	void sub(com o1,com o2){
+		float rs = o1.r-o2.r;
+		float ims = o1.im-o2.im;
+		System.out.println("Difference is "+ rs +"+i"+ ims);
+	}
+	void mul(com o1,com o2){
+		float rs = o1.r*o2.r - o1.im*o2.im;
+		float ims = o1.im*o2.r + o1.r*o2.im;
+		System.out.println("Multiplication is "+ rs +"+i"+ ims);
+	}
+}
+
+package lab;
+import java.util.Scanner;
+
+public class Stack {
+
+	public static void main(String[] args) {
+		int n=0;
+		Scanner sc = new Scanner(System.in);
+		while(n!=4)
+		{
+		com a =new com();
+		com b =new com();
+		System.out.println("Enter your choice\n 1 For Addition\n 2 For Subtaraction\n 3 For Multiplication\n 4 For Exit");
+		n=sc.nextInt();
+		switch(n)
+		{
+		case 1:a.add(a, b);
+		break;
+		case 2:a.sub(a, b);
+		break;
+		case 3:a.mul(a, b);
+		break;
+		default:System.out.println("Invalid Choice");
+		}}
+		sc.close();
+	}
+}
